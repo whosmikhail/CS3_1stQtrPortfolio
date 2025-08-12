@@ -1,6 +1,18 @@
 <script>
     var age = 13;
     var maxage = 120;
+    var lefttolive = (maxage - age);
 
-    document.write("You have " age+maxage "years left to live.")
+    document.write("You have ")
+    document.write(lefttolive)
+    document.write(" years left to live.")
+
+    let ask = window.prompt("Do you still want to live that many years?", "Yes");
+    let oks = window.confirm("Is yes really your answer?");
+    if (oks) {
+        window.prompt("Good for you!!! <3333")
+    }
+    else {
+        window.prompt("I noticed that you used “😭” in your comment. Just wanted to say, don’t give up anything in your life. I don’t know what you’re going through but I’m always here to help you through.");
+    }
 </script>
