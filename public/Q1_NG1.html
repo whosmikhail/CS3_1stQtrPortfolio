@@ -4,17 +4,25 @@
         <label for="age">Enter your age:</label>
         <input type="text" id="age" name="age"><br></br>
         <button type="button">Accept Age</button>
+
+        <label for="maxage">Enter your preferred maximum age:</label>
+        <input type="text" id="maxage" name="maxage"><br></br>
+        <button type="button">Accept Max Age</button>
+
+        <label for="bananas">How many bananas do you eat per month?</label>
+        <input type="text" id="bananas" name="bananas"><br></br>
+        <button type="button">Accept Bananas Eaten</button>
 <script>
     var age = 13;
     var maxage = 120;
-    var lefttolive = (maxage - age);
+    var bananaseaten = document.getElementById("bananas")
 
     document.write("You have ")
-    document.write(lefttolive)
-    document.write(" years left to live.")
+    document.write(bananaseaten*12*(maxage-age))
+    document.write(" more bananas to eat before you die.")
 
     let ask = window.prompt("Do you still want to live that many years?", "Yes");
-    let oks = window.confirm('Is really your answer?');
+    let oks = window.confirm("Is " + ask + " really your answer?");
     if (oks) {
         window.prompt("Good for you!!! <3333")
     }
