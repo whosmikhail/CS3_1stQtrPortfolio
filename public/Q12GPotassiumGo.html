@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
     <body>
-
-        <h2>Q1 2nd Graded Exercise submitted by Potassium</h2>
+        <h2>Q1 2nd Graded Exercise submitted by Mikhail Rafferty Go</h2>
 
         <div>
             Meal Price:
             <input id="inp_MlPrc">
-            <br> Tip
-            
+            <br> Tip:
+            <input id="inp_Tip">
+            <br> Service Charge:
+            <input id="inp_sc"> <br>
+            <button id="btn_submit">Accept Input</button>
         </div>
-        
-
 
         <script>
+            const btn=document.getElementById("btn_submit");
+            const mp=document.getElementById("inp_MlPrc");
+            const tip=document.getElementById("inp_Tip");
+            const sc=document.getElementById("inp_sc");
+
+            btn.addEventListener('click', totalMeal());
+
             totalMeal(); {
-                var mp = 119.00;
-                var tip = 20;
-                var sc = 12;
-
-
+                document.write("Total Meal: " + (parseFloat(mp) + parseFloat(tip) + (parseFloat(sc) / 100 * parseFloat(mp))).toFixed(2));
             }
         </script>
     </body>
