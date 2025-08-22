@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="2Gstyle.css">
+    </head>
     <body>
-        <h2>Q1 2nd Graded Exercise submitted by Mikhail Rafferty Go</h2>
+        <h2>Q1 2nd Graded Exercise submitted by Mikhail Rafferty Go of 9 Potassium</h2>
 
-        <div>
+        <div class="Questions">
             Meal Price:
             <input id="inp_MlPrc">
             <br> Tip:
@@ -14,15 +17,15 @@
         </div>
 
         <script>
-            const btn=document.getElementById("btn_submit");
-            const mp=document.getElementById("inp_MlPrc");
-            const tip=document.getElementById("inp_Tip");
-            const sc=document.getElementById("inp_sc");
+            const btn = document.getElementById("btn_submit");
+            const mp = document.getElementById("inp_MlPrc");
+            const tip = document.getElementById("inp_Tip");
+            const sc = document.getElementById("inp_sc");
 
-            btn.addEventListener('click', totalMeal());
+            btn.addEventListener('click', totalMeal);
 
-            totalMeal(); {
-                document.write("Total Meal: " + (parseFloat(mp) + parseFloat(tip) + (parseFloat(sc) / 100 * parseFloat(mp))).toFixed(2));
+            function totalMeal() {
+                document.write("Total Meal: " + (parseFloat(mp.value) + parseFloat(tip.value) + (parseFloat(sc.value) / 100 * parseFloat(mp.value))).toFixed(2));
             }
         </script>
     </body>
