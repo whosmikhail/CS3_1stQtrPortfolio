@@ -4,33 +4,45 @@
 <p id="wordDisplay"></p>
 <input type="text" id="guessInput" maxlength="1">
 <button onclick="makeGuess()">Guess</button>
+<p id="letters"></p>
 <p id="message"></p>
 <p id="remaining"></p>
 
 <script>
-  let secretWord = ["m", "a", "g", "i", "c", " ", "m", "i", "k"];
-  let guessedWord = ["_", "_", "_", "_", "_", " ", "_", "_", "_"];
+  let secretWord = ["m", "y", "s", "t", "i", "c", "m", "i", "k"];
+  let guessedWord = ["_", "_", "_", "_", "_", "_ ", "_", "_", "_"];
 
   document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
   var counter = 7;
+  let letters = "";
 
   function makeGuess() {
-    let guess = document.getElementById("guessInput").value.toLowerCase();
-    let correct = false;
+    if (counter > 0) {
+      let guess = document.getElementById("guessInput").value.toLowerCase();
+      let correct = false;
 
-    for (let i = 0; i < secretWord.length; i++) {
-      if (secretWord[i] === guess) {
-        guessedWord[i] = guess;
-        correct = true;
+      for (let i = 0; i < secretWord.length; i++) {
+        if (secretWord[i] === guess) {
+          guessedWord[i] = guess;
+          correct = true;
+        }
       }
+      if (correct == false) {
+          counter--
+      }  
+      
+      letters = letters + document.getElementById("guessInput").value + " ";
+      
+      document.getElementById("letters").textContent = "Guessed Letters: " + letters;
+      document.getElementById("remaining").textContent = "Remaining Attempts: " + counter;
+      document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+      if (counter > 0) {
+        document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
+      }
+      else {
+        document.getElementById("message").textContent = "Better luck next time!!! The word is: Mystic";
+      }
+      document.getElementById("guessInput").value = "";
     }
-    if (correct == false) {
-        counter--
-    }
-
-    document.getElementById("remaining").textContent = "Remaining Attempts: " + counter;
-    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
-    document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
-    document.getElementById("guessInput").value = "";
   }
 </script>
