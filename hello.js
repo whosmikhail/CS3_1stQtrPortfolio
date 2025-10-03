@@ -29,3 +29,4 @@ fruits.forEach(FRUITSHOW)
 function FRUITSHOW(grade) {
     console.log(grade)
 }
+
